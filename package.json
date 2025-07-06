@@ -1,0 +1,22 @@
+{
+  "name": "skeleton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "app": "pnpm --filter app",
+    "dev": "pnpm --recursive --parallel --stream run dev",
+    "server": "pnpm --filter server",
+    "shared": "pnpm --filter shared"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.1",
+  "private": true,
+  "workspaces": [
+    "app",
+    "server",
+    "shared"
+  ]
+}

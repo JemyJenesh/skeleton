@@ -1,7 +1,9 @@
 import z from "zod";
 
-export const resultSchema = z.object({
-  ok: z.boolean(),
+export const paginationSchema = z.object({
+  currentPage: z.number(),
+  perPage: z.number(),
+  totalPage: z.number(),
 });
 
-export type Result = z.infer<typeof resultSchema>;
+export type Pagination = z.infer<typeof paginationSchema>;

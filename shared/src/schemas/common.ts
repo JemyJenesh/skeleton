@@ -1,9 +1,32 @@
 import z from "zod";
+import { CONFIGS } from "../config";
 
-export const paginationSchema = z.object({
-  currentPage: z.number(),
-  perPage: z.number(),
-  totalPage: z.number(),
+export const filterSchema = z.object({
+  page: z
+    .union([z.string(), z.number()])
+    .transform((val) => Number(val))
+    .optional()
+    .default(1),
+  pageSize: z
+    .union([z.string(), z.number()])
+    .transform((val) => Number(val))
+    .optional()
+    .default(CONFIGS.DEFAULT_PAGE_SIZE),
+  sortBy: z.string().optional(),
+  sortOrder: z.enum(["ASC", "DESC"]).optional().default("DESC"),
 });
 
+export const paginationSchema = z.object({
+  page: z.number(),
+  pageSize: z.number(),
+  totalCount: z.number(),
+  totalPages: z.number(),
+});
+
+export type PaginatedData<T> = {
+  data: T[];
+  meta: Pagination;
+};
+
+export type Filter = z.infer<typeof filterSchema>;
 export type Pagination = z.infer<typeof paginationSchema>;

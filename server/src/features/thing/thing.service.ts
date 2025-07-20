@@ -1,38 +1,52 @@
-import { Thing, ThingCreateInput, ThingUpdateInput } from "shared";
+import { PrismaClient } from "@prisma/client";
+import { Filter, ThingCreateInput, ThingUpdateInput } from "shared";
 
-let things: Thing[] = [];
+const prisma = new PrismaClient();
 
 export const thingService = {
-  create: (data: ThingCreateInput): Thing => {
-    const newThing: Thing = {
-      id: Date.now().toString(),
-      ...data,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+  create: async (data: ThingCreateInput) => {
+    return await prisma.thing.create({
+      data,
+    });
+  },
+
+  delete: async (id: string) => {
+    return await prisma.thing.delete({ where: { id } });
+  },
+
+  getAll: async (filters: Filter) => {
+    const { page, pageSize } = filters;
+    const skip = (page - 1) * pageSize;
+
+    const [things, totalCount] = await Promise.all([
+      prisma.thing.findMany({
+        skip,
+        take: pageSize,
+      }),
+      prisma.thing.count(),
+    ]);
+
+    const totalPages = Math.ceil(totalCount / pageSize);
+
+    return {
+      data: things,
+      meta: {
+        totalCount,
+        totalPages,
+        page,
+        pageSize,
+      },
     };
-    things.push(newThing);
-    return newThing;
   },
 
-  delete: (id: string): boolean => {
-    const index = things.findIndex((thing) => thing.id === id);
-    if (index === -1) return false;
-    things.splice(index, 1);
-    return true;
+  getOne: async (id: string) => {
+    return await prisma.thing.findUnique({ where: { id } });
   },
 
-  getAll: (): Thing[] => {
-    return things;
-  },
-
-  getOne: (id: string): Thing | undefined => {
-    return things.find((thing) => thing.id === id);
-  },
-
-  update: (id: string, data: ThingUpdateInput): Thing | undefined => {
-    const index = things.findIndex((thing) => thing.id === id);
-    if (index === -1) return undefined;
-    things[index] = { ...things[index], ...data };
-    return things[index];
+  update: async (data: ThingUpdateInput) => {
+    return await prisma.thing.update({
+      where: { id: data.id },
+      data,
+    });
   },
 };

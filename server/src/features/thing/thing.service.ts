@@ -31,10 +31,10 @@ export const thingService = {
     return {
       data: things,
       meta: {
-        totalCount,
-        totalPages,
         page,
         pageSize,
+        totalCount,
+        totalPages,
       },
     };
   },

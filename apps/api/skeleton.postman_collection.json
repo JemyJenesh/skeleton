@@ -1,0 +1,388 @@
+{
+	"info": {
+		"_postman_id": "98be528e-d321-4268-a5fe-4eefc9fa5ace",
+		"name": "skeleton",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8626232"
+	},
+	"item": [
+		{
+			"name": "things",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cache-Control",
+								"value": "no-cache",
+								"type": "text"
+							},
+							{
+								"key": "Postman-Token",
+								"value": "<calculated when request is sent>",
+								"type": "text"
+							},
+							{
+								"key": "Host",
+								"value": "<calculated when request is sent>",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "PostmanRuntime/7.39.1",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "gzip, deflate, br",
+								"type": "text"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/:resource",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								":resource"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"description": "asc , desc",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "resource",
+									"value": "things"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cache-Control",
+								"value": "no-cache",
+								"type": "text"
+							},
+							{
+								"key": "Postman-Token",
+								"value": "<calculated when request is sent>",
+								"type": "text"
+							},
+							{
+								"key": "Host",
+								"value": "<calculated when request is sent>",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "PostmanRuntime/7.39.1",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "gzip, deflate, br",
+								"type": "text"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/:resource/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								":resource",
+								":id"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"description": "asc , desc",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "resource",
+									"value": "things"
+								},
+								{
+									"key": "id",
+									"value": "asdfasdf"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cache-Control",
+								"value": "no-cache",
+								"type": "text"
+							},
+							{
+								"key": "Postman-Token",
+								"value": "<calculated when request is sent>",
+								"type": "text"
+							},
+							{
+								"key": "Host",
+								"value": "<calculated when request is sent>",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "PostmanRuntime/7.39.1",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "gzip, deflate, br",
+								"type": "text"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/:resource/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								":resource",
+								":id"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"description": "asc , desc",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "resource",
+									"value": "things"
+								},
+								{
+									"key": "id",
+									"value": "46d7864b-2173-4114-8716-84cc6c4375c1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create one",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Apple\",\r\n    \"description\": \"This is a fruit.\",\r\n    // \"age\": 10,\r\n    \"dateOfOrigin\": \"0001-01-01T00:00:00.000Z\",\r\n    \"state\": \"Solid\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/:resource",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								":resource"
+							],
+							"variable": [
+								{
+									"key": "resource",
+									"value": "things"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update one",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"asdfasdf\",\r\n    // \"name\": \"Ball\",\r\n    \"description\": \"This is a fruit.\",\r\n    \"age\": 100\r\n    // \"dateOfOrigin\": \"2025-07-20T14:06:55.913Z\",\r\n    // \"state\": \"Solid\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/:resource",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								":resource"
+							],
+							"variable": [
+								{
+									"key": "resource",
+									"value": "things"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@repo/utils",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "lint": "eslint . --max-warnings 0"
+  },
+  "exports": {
+    "./config": {
+      "types": "./src/config/index.ts",
+      "default": "./dist/config/index.js"
+    },
+    "./schemas": {
+      "types": "./src/schemas/index.ts",
+      "default": "./dist/schemas/index.js"
+    }
+  },
+  "dependencies": {
+    "zod": "^4.0.5"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^24.0.15",
+    "@types/eslint": "^9.6.1",
+    "eslint": "^9.31.0",
+    "typescript": "^5.8.3"
+  }
+}

@@ -5,6 +5,7 @@ This repository is a monorepo managed with [Turborepo](https://turborepo.com/).
 ## Overview
 
 This monorepo contains multiple applications and packages, all written in [TypeScript](https://www.typescriptlang.org/):
+The project is setup with postgresql database and adminer as a database client using docker.
 
 ### Apps
 
@@ -38,6 +39,12 @@ pnpm build --filter=web
 ```
 
 ## Develop
+
+Start all services with Docker Compose:
+
+```sh
+docker-compose up --build
+```
 
 To start development for all apps and packages:
 

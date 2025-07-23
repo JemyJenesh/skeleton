@@ -1,7 +1,7 @@
 import cors from "cors";
 import express, { type Express } from "express";
 import { errorHandler } from "./middlewares/errorhandler";
-import { routes } from "./routes";
+import { router } from "./router";
 
 export const createServer = (): Express => {
   const app = express();
@@ -12,7 +12,7 @@ export const createServer = (): Express => {
       return res.json({ ok: false });
     });
 
-  routes(app);
+  app.use("/api", router);
   app.use(errorHandler);
 
   return app;
